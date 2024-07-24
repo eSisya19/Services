@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-container" class="container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+    <div id="main-container" class="container hidden">
+        <h1>Maintenance Tracker</h1>
+        <form id="hospital-form">
+            <input type="text" id="hospital-name" placeholder="Hospital Name" required>
+            <input type="date" id="install-date" required>
+            <button type="submit">Add Hospital</button>
+        </form>
+        <input type="text" id="search-bar" placeholder="Search Hospitals...">
+        <select id="sort-select">
+            <option value="name">Sort by Name</option>
+            <option value="installDate">Sort by Installation Date</option>
+            <option value="nextMaintenanceDue">Sort by Maintenance Due Date</option>
+        </select>
+        <label for="dark-mode-toggle">Dark Mode:</label>
+        <input type="checkbox" id="dark-mode-toggle">
+        <table id="hospital-table">
+            <thead>
+                <tr>
+                    <th>Hospital Name</th>
+                    <th>Installation Date</th>
+                    <th>Next Maintenance Due</th>
+                    <th>Invoiced</th>
+                    <th>Paid</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added here -->
+            </tbody>
+        </table>
+        <div id="pagination">
+            <button id="prev-page">Previous</button>
+            <span id="page-number">1</span>
+            <button id="next-page">Next</button>
+        </div>
+        <div id="warnings" class="warnings"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
